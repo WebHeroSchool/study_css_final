@@ -20,7 +20,10 @@ body {
 	position: relative;
 }
 
-.header__image .image__item {
+.header__image {
+	background: url("../img/image_1.jpg") no-repeat;
+	width: 549px;
+	height: 562px;
 	position: absolute;
 	top: 169px;
 	left: 186px;
@@ -37,8 +40,20 @@ body {
 	position: absolute;
 	height: 37px;
 	width: 98px;
-	margin-top: 36px;
-	margin-left: 52px;
+	margin-top: 42px;
+	margin-left: 54px;
+}
+
+.logo__image {
+	background: url(../img/logo.png) no-repeat -5px -5px;
+	display: block;
+	width: 92px;
+	height: 23px;
+}
+
+.left-block__dropdown {
+	float: right;
+	margin-top: 42px;
 }
 
 .left-block__dropdown {
@@ -141,7 +156,7 @@ body {
 	margin-top: 263px;
 }
 
-h1.header__title {
+.header__title {
 	font-size: 80px;
 	font-weight: 700;
 	line-height: 82px;
@@ -149,7 +164,7 @@ h1.header__title {
 	padding-top: 6px;
 }
 
-p.section__text {
+.section__text {
 	font-size: 15px;
 	line-height: 21px;
 	margin-bottom: 36px;
@@ -159,7 +174,7 @@ p.section__text {
 	float: left;
 	display: inline-block;
 	background: #fff;
-	border: 1.5px solid #000;
+	border: 2px solid #000;
 	font-size: 13px;
 	font-weight: 500;
 	cursor: pointer;
@@ -186,7 +201,7 @@ a.offers__link {
 
 .offers__link::after {
 	background: url(../img/arrow1.png) no-repeat;
-	content: "";
+	content: " ";
 	display: inline-block;
 	position: absolute;
 	top: 2px;
@@ -215,11 +230,114 @@ button.scroll__button {
 
 button.scroll__button:before {
 	position: absolute;
-	top: 11px;
 	left: 10px;
+	top: 11px;
 	content: "";
 	width: 3px;
 	height: 8px;
 	background-color: #000;
 	border-radius: 19px;
+}
+
+@media only screen and (max-width: 768px) {
+	.wrap {
+		max-width: 375px;
+		margin: 0 auto;
+		
+	}
+	
+	.header {
+		min-height: 597px;
+		position: relative;
+	}
+	
+	.header__image {
+		background: black url("../img/image_2.jpg") no-repeat;
+		height: 583px;
+		width: 375px;
+		position: absolute;
+		left: 0;
+		top: 15px;
+	}
+	
+	.left-block__dropdown,
+	.header__right-block,
+	.header__left-block,
+	.left-block__social {
+		height: 0;
+		overflow: hidden;
+	}
+	
+	.scroll__button,
+	.left-block__social {
+		display: none;
+	}
+	
+	.left-block__logo {
+		background: #fff;
+		margin: 0;
+		height: 69px;
+		width: 306px;
+	}
+	
+	.logo__image {
+		background: url(../img/logo.png) no-repeat -107px -5px;
+		display: block;
+		height: 23px;
+		width: 92px;
+		position: absolute;
+		left: 29px;
+		top: 21px;
+	}
+	
+	.right-block__menu {
+		background: #EDEDED;
+		cursor: pointer;
+		height: 69px;
+		width: 70px;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	
+	.right-block__menu span {
+		background-color: #000;
+		display: block;
+		height: 3px;
+		width: 26px;
+		position: absolute;
+		left: 21px;
+	}
+	
+	.right-block__menu span:nth-child(1) {
+		top: 30px;
+	}
+	
+	.right-block__menu span:nth-child(2) {
+		top: 37px;
+	}
+	
+	.header__title {
+		position: absolute;
+		bottom: 62px;
+		left: 26px;
+		font-size: 50px;
+		font-weight: 700;
+		line-height: 51px;
+		margin: 0;
+	}
+	
+	.header__title:before {
+		border: 3px solid #020202;
+		border-top: none;
+		border-right: none;
+		content: "";
+		position: absolute;
+		bottom: -38px;
+		left: 150px;
+		width: 20px;
+		height: 20px;
+		transform: rotate(-45deg);
+	}
+	
 }
