@@ -9,23 +9,24 @@ body {
 	margin: 0 auto;
 }
 
-/*первый этаж*/
+/* первый этаж */
 
 .header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	min-height: 900px;
+	height: 900px;
 	position: relative;
 }
 
 .header__image {
 	background: url(../img/image_1.jpg) no-repeat;
-	width: 100%;
-	height: 100%;
+	width: 549px;
+	height: 562px;
 	position: absolute;
-	top: 169px;
 	left: 186px;
+	top: 50%;                        
+  transform: translate(0, -50%);
 }
 
 .header__left-block {
@@ -113,23 +114,23 @@ body {
 }
 
 .right-block__menu {
-	width: 92px;
-	height: 92px;
+	align-self: flex-end;
 	background: rgba(0, 0, 0, .05);
-	position: relative;
 	cursor: pointer;
 	display: inline-block;
-	align-self: flex-end;
+	width: 92px;
+	height: 92px;
 	margin-bottom: 171px;
+	position: relative;
 }
 
 .right-block__menu span {
 	background-color: #000;
+	display: block;
 	position: absolute;
 	left: 28px;
 	width: 35px;
 	height: 3px;
-	display: block;
 }
 
 .right-block__menu span:nth-child(1) {
@@ -156,7 +157,6 @@ body {
 	margin: 0;
 	margin-bottom: 20px;
 	padding-top: 6px;
-
 }
 
 .section__text {
@@ -174,11 +174,17 @@ body {
 	font-size: 13px;
 	font-weight: 500;
 	cursor: pointer;
-	letter-spacing: 1px;
 	margin-right: 54px;
 	margin-left: -1px;
-	padding: 14px 38px;
+	padding: 13px 39px;
 	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.section__button a,
+.buy__button a {
+	color: #000;
+	text-decoration: none;
 }
 
 .section__button:focus {
@@ -239,7 +245,7 @@ button.scroll__button:before {
 }
 
 
-/*второй этаж*/
+/* второй этаж */
 
 .main {
 	background: #fae8e4;
@@ -347,15 +353,10 @@ button.scroll__button:before {
 .buy__button {
 	display: inline-block;
 	float: left;
-	letter-spacing: 0;
-	padding: 13px 48px 13px 38px;
+	padding: 13px 46px 13px 38px;
 	margin: 0;
 }
 
-.buy__button a {
-	color: #000;
-	text-decoration: none;
-}
 
 .section-card__buy {
 	border: 2px solid #000;
@@ -401,9 +402,9 @@ button.scroll__button:before {
 	position: absolute;
 	left: 884px;
 	bottom: 120px;
+	font-size: 13px;
 	font-weight: 500;
 	line-height: normal;
-	font-size: 13px;
 }
 
 .main__offers .offers__link::after {
@@ -411,7 +412,8 @@ button.scroll__button:before {
 	width: 250px;
 }
 
-/*третий этаж*/
+
+/* третий этаж */
 
 .footer {
 	background: #EBE3D8;
@@ -420,25 +422,25 @@ button.scroll__button:before {
 }
 
 .footer::after {
+	background: #000;
 	content: "";
 	width: 73px;
 	height: 900px;
-	background: #000;
-	position: absolute;
 	top: 0;
 	left: 388px;
+	position: absolute;
 	z-index: 1;
 }
 
 .footer__image {
 	background: url(../img/item_3.png) no-repeat;
+	box-shadow: 0 120px 60px -100px rgba(0, 0, 0, 0.2);
 	position: absolute;
 	width: 827px;
 	height: 621px;
 	top: 139px;
 	left: 88px;
 	z-index: 10;
-	box-shadow: 0 120px 60px -100px rgba(0, 0, 0, 0.2);
 }
 
 .footer__section-card {
@@ -487,9 +489,9 @@ button.scroll__button:before {
 	position: absolute;
 	top: 643px;
 	left: 948px;
+	font-size: 13px;
 	font-weight: 500;
 	line-height: normal;
-	font-size: 13px;
 	margin-top: 0;
 	z-index: 50;
 }
@@ -509,8 +511,8 @@ button.scroll__button:before {
 	display: inline-block;
 	font-size: 12px;
 	font-weight: 700;
-	text-transform: uppercase;
 	padding-right: 86px;
+	text-transform: uppercase;
 }
 
 .copyright__link {
@@ -520,28 +522,32 @@ button.scroll__button:before {
 }
 
 
-/*адаптив под планшеты*/
+/* адаптив под планшеты */
+ 
+@media (min-width: 967px) and (max-width: 1431px) {
 
-@media (min-width: 768px) and (max-width: 1431px) {
+/* первый этаж */
 
-/*первый этаж*/
+
 	.header__image {
-		max-width: 30%;
-		max-height: 100%;
-		background-position: top center;
-		position: absolute;
-		top: 169px;
-		left: 110px;
+		background-size: 60%;
+		background-position: left center;
+		width: 60%;
+		height: 57%;
+		left: 10%;
+		top: 50%;     
+		transform: translate(0, -50%);                
 	}
 	
 	.header__section {
 		position: relative;
-		width: 60%;
+		width: 62%;
 		margin-left: calc(100%/4);
+		margin-top: 5%;
 	}
 	
 	.header__title {
-		font-size: 40px; 
+		font-size: 44px; 
 		line-height: 42px;
 	}
 	
@@ -550,39 +556,42 @@ button.scroll__button:before {
 	}
 	
 	.section__button {
-		float: none;
-		margin-left:auto; 
-		margin-right:auto; 
 		display: block;
+		margin-right: 15px; 
+		font-size: 12px;
 	}
 	
 	.section__offers {
-		position: absolute;
-		bottom: -50px;
-		
+		float: left;
+		font-size: 11px;
 	}
+	
 	
 /*второй этаж*/	
+
 	.main__image {
-		background: url(../img/item_2.png) no-repeat,
-					url(../img/item_1.png) no-repeat;
-		background-position: 15%, 30%;
-		background-size: 40% auto;
+		background: url(../img/item_2.png) no-repeat 231px 28px,
+								url(../img/item_1.png) no-repeat 137px 217px;
+		background-position: center center, 10% center;
+		background-size: 60%, 40%;
+		width: 55%;
+		height: 844px;
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
-	
 	
 	.main__section-card {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: stretch;
-		min-width: 55%;
-	
+		min-width: 45%;
 	}
 	
 	.setion-card__wrap {
 		margin: 5px;
-		min-height: 300px;;
+		min-height: 300px;
 		max-height: 700px;
 	}
 	
@@ -619,7 +628,7 @@ button.scroll__button:before {
 		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
-		padding: 25px;
+		padding: 20px;
 	}
 	
 	.main__offers {
@@ -635,101 +644,90 @@ button.scroll__button:before {
 	}
 	
 	.footer__image {
-		width: 55%;
-		background: url(../img/item_3.png) no-repeat;
-		background-position: 10% top;
-		background-size: 65% auto;
-		box-shadow: none;
+		background-size: cover;
+		background-position: 25% center;
+		box-shadow: 0 120px 60px -100px rgba(0, 0, 0, 0.2);
+		width: 58%;
+		height: 63%;
+		left: 5%;
+		top: 50%;     
+		transform: translate(0, -50%);                
 	}
-		
+
+	
 	.footer__section-card {
-		background: #FAE8E4;
-		width: 400px;
-		max-height: 400px;
-		position: absolute;
-		top: 350px;
-		right: 148px;
-		z-index: 20;
-		width: 45%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		width: 39%;
+		right: 5%;
+		top: 50%;     
+		transform: translate(0, -50%);
 	}
 	
 	.footer-card__wrap {
-		margin: 20px;
+		margin: 20px 25px;
 	}
 	
-	.footer__section-card .section-card__title {
-		font-size: 32px;
-	
+	.footer__section-card .section-card__text {
+		height: 85%;
 	}
 	
 	.footer__section-card .section-card__buy {
-		display: none;
-	}	
-		
-
+		margin-right: 10px;
+	}
+	
 	.footer__section-card .buy__button {
-		font-size: 16px;
-		float: none;
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
+		display: inline-block;
+		float: right;
+		padding: 13px;
+		width: 52%;
 		text-align: center;
 	}
 	
-	.footer__offers  {
-		position: absolute;
-		left:550px;
-		top: 750px;
-		width: 180px;
-		height: 40px;
-		z-index: 50;
-		font-size: 15px;
-	}
-	
-	.footer__offers .offers__link {
-		font-size: 18px;
+	.footer__offers {
+		font-size: 10px;
+		left: 65%;
 	}
 	
 	.footer__offers .offers__link::after {
-		background: url(../img/arrow3.png) no-repeat;
-		background-size: 110px 12px;
-		width: 120%;
-		position: absolute;
-		top: 50px;
-		left: 2px;
-		margin: 0;
+		background-position: left center;
+		background-size: 75% 80%;
+		margin-left: 12px;
 	}
+	
 }
 
 /*адаптив под мобильные*/
 
-@media (max-width: 767px) {
+@media (max-width: 966px) {
 	.wrap {
-		max-width: 375px;
-		margin: 0;
 		overflow: hidden;
 	}
 	
 	/*первый этаж*/
 	
 	.header {
-		min-height: 597px;
+		max-height: 596px;
+		width: 100%;
 		position: relative;
 	}
 	
 	.header__image {
-		background: black url("../img/image_2.jpg") no-repeat;
-		height: 583px;
-		width: 375px;
-		position: absolute;
+		background: url("../img/image_2.jpg") no-repeat;
+		background-position: center 15%;
+		background-size: cover;
+		width: 100%;
+		height: 596px;
 		left: 0;
-		top: 15px;
+		bottom: 0;
 	}
 	
 	.left-block__dropdown,
 	.header__right-block,
 	.header__left-block,
-	.left-block__social {
+	.left-block__social,
+	.header__section  {
 		height: 0;
 		overflow: hidden;
 	}
@@ -742,8 +740,8 @@ button.scroll__button:before {
 	
 	.left-block__logo {
 		background: #fff;
+		width: 100%;
 		height: 69px;
-		width: 400px;
 		position: absolute;
 	}
 	
@@ -787,23 +785,24 @@ button.scroll__button:before {
 	
 	.header__title {
 		position: absolute;
-		bottom: 62px;
-		left: 26px;
+		bottom: 40px;
+		left: 52%;
+		transform: translate(-50%, 0);
 		font-size: 50px;
 		font-weight: 700;
 		line-height: 51px;
-		margin: 0;
+		width: 90%;
 	}
 	
-	.header__title:before {
+	.header__title::before {
 		border: 3px solid #020202;
 		border-top: none;
 		border-right: none;
 		content: "";
 		position: absolute;
 		bottom: -38px;
-		left: 150px;
 		width: 20px;
+		left: 45%;
 		height: 20px;
 		transform: rotate(-45deg);
 	}
@@ -811,17 +810,20 @@ button.scroll__button:before {
 	/*второй этаж*/
 	
 	.main {
-		max-width: 376px;
+		width: 100%;
 		min-height: 596px;
 		position: relative;
 	}
 	
 	.main__image {
 		background: url(../img/item_2.png) no-repeat;
-		background-size: 224px 326px;
-		position: absolute;
+		width: 224px;
+		height: 326px;
+		background-size: cover;
+		background-position: top center;
 		top: -53px;
-		left: 76px;
+		left: 50%;
+		transform: translate(-50%, 0);
 	}
 	
 	.main__section-card {
@@ -831,10 +833,11 @@ button.scroll__button:before {
 		width: 320px;
 		position: absolute;
 		top: 263px;
-		right: 26px;
+		left: 50%;
+		transform: translate(-50%, 0);
 	}
 	
-	.section-card__wrap {
+	.main__section-card .section-card__wrap {
 		width: 260px;
 		margin: 15px 28px 25px 29px;
 	}
@@ -851,7 +854,6 @@ button.scroll__button:before {
 		color: rgba(0, 0, 0, .5);
 		font-size: 10px;
 		font-weight: 700;
-		letter-spacing: 0.07em;
 		line-height: 10px;
 		text-transform: uppercase;
 		margin-bottom: 12px;
@@ -863,7 +865,7 @@ button.scroll__button:before {
 		font-size: 9px;
 		font-weight: 400;
 		line-height: 13px;
-		margin-bottom: 9px;
+		margin-bottom: 10px;
 		margin-left: 1px;
 		width: 252px;
 	}
@@ -934,10 +936,14 @@ button.scroll__button:before {
 		display: none;
 	}
 	
+	.main__offers {
+		display: none;
+	}
+	
 	/*третий этаж*/
 	
 	.footer {
-		max-width: 376px;
+		width: 100%;
 		min-height: 596px;
 		position: relative;
 	}
@@ -959,7 +965,8 @@ button.scroll__button:before {
 		width: 351px;
 		height: 261px;
 		top: 34px;
-		left: 12px;
+		left: 50%;
+		transform: translate(-50%, 0);
 		z-index: 10;
 		box-shadow: -5px 5px 25px rgba(0, 0, 0, 0.2);
 	}
@@ -969,7 +976,8 @@ button.scroll__button:before {
 		height: 195px;
 		position: absolute;
 		top: 275px;
-		left: 45px;
+		left: 50%;
+		transform: translate(-50%, 0);
 		z-index: 20;
 	}
 	
@@ -992,7 +1000,7 @@ button.scroll__button:before {
 		margin-left: -1px;
 		height: 30px;
 		width: 228px;
-		margin-bottom: 28px;
+		margin-bottom: 30px;
 	}
 	
 	.footer__section-card .buy__button {
@@ -1004,28 +1012,24 @@ button.scroll__button:before {
 	
 	.footer__offers {
 		position: absolute;
-		top: 0;
-		left: 0;
+		width: 140px;
+		height: 40px;
+		left: 50%;
+		top: 506px;
 	}
 	
 	.footer__offers .offers__link {
-		position: absolute;
-		left: 188px;
-		top: 506px;
-		width: 140px;
-		height: 40px;
-		z-index: 50;
 		font-size: 15px;
 	}
 	
 	.footer__offers .offers__link::after {
 		background: url(../img/arrow3.png) no-repeat;
 		background-size: 135px 12px;
-		width: 100%;
+		width: 130%;
+		margin: 0;
 		position: absolute;
 		top: 42px;
 		left: 2px;
-		margin: 0;
 	}
 	
 	.footer__copyright {
